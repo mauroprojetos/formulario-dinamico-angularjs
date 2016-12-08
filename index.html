@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="formDinamico">
+
+    <head>
+        <meta charset="utf-8"/>
+        <title>Formulaário Dinâmico</title>
+        <script>
+            document.write('<base href="' + document.location + '" />');
+        </script>
+        <script data-require="angular.js@1.5.x" src="https://code.angularjs.org/1.5.8/angular.js" data-semver="1.5.8"></script>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="index.js" charset="utf-8"></script>
+
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    </head>
+
+    <body ng-controller="formDinamicoCtrl">
+        <form name="formAnimal" id="formAnimal" ng-submit="formAnimal.$valid && salvarAnimal(animal)" valida-Formulario novalidate>
+            <input type="submit" value="Salvar" class="btn input-lg btn-success col-xs-12 col-sm-6 col-sm-offset-2">
+            <input type="button" value="Cancelar" class="cancelaCadastro btn input-lg btn-danger col-xs-12 col-sm-3 col-sm-offset-1" ng-click="mudaTela('lista')">
+            {{animal}}
+            <template-dados raiz-modelo="animal" url-template="var.js"></template-dados>
+            <input type="submit" value="Salvar" class="btn input-lg btn-success col-xs-12 col-sm-6 col-sm-offset-2">
+            <input type="button" value="Cancelar" class="cancelaCadastro btn input-lg btn-danger col-xs-12 col-sm-3 col-sm-offset-1" ng-click="mudaTela('lista')">
+        </form>
+    </body>
+
+</html>
